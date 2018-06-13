@@ -9,14 +9,14 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace MauticPlugin\MauticEnhancerBundle\Helper;
+namespace MauticPlugin\ContactEnrichmentBundle\Helper;
 
 use Mautic\PluginBundle\Helper\IntegrationHelper;
 
 /**
  * Class EnhancerHelper.
  */
-class EnhancerHelper
+class ContactEnrichmentHelper
 {
     /**
      * @var IntegrationHelper
@@ -50,7 +50,7 @@ class EnhancerHelper
     }
 
     /**
-     * @return \MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration[]
+     * @return \MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration[]
      */
     public function getEnhancerIntegrations()
     {

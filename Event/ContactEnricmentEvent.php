@@ -9,19 +9,19 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace MauticPlugin\MauticEnhancerBundle\Event;
+namespace MauticPlugin\ContactEnrichmentBundle\Event;
 
 use Mautic\CampaignBundle\Entity\Campaign;
 use Mautic\LeadBundle\Entity\Lead;
-use MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration as Enhancer;
+use MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration as Enhancer;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Class MauticEnhancerEvent.
  */
-class MauticEnhancerEvent extends Event
+class ContactEnricmentEvent extends Event
 {
-    /** @var \MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration */
+    /** @var \MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration */
     protected $enhancer;
 
     /** @var \Mautic\LeadBundle\Entity\Lead */
@@ -45,7 +45,7 @@ class MauticEnhancerEvent extends Event
     }
 
     /**
-     * @return \MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration
+     * @return \MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration
      */
     public function getEnhancer()
     {

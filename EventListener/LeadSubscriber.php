@@ -9,13 +9,13 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace MauticPlugin\MauticEnhancerBundle\EventListener;
+namespace MauticPlugin\ContactEnrichmentBundle\EventListener;
 
 use Mautic\CoreBundle\EventListener\CommonSubscriber;
 use Mautic\LeadBundle\Event\LeadEvent;
 use Mautic\LeadBundle\LeadEvents;
 use Mautic\PluginBundle\Exception\ApiErrorException;
-use MauticPlugin\MauticEnhancerBundle\Helper\EnhancerHelper;
+use MauticPlugin\ContactEnrichmentBundle\Helper\ContactEnrichmentHelper;
 
 /**
  * Class LeadSubsciber.
@@ -23,14 +23,14 @@ use MauticPlugin\MauticEnhancerBundle\Helper\EnhancerHelper;
 class LeadSubscriber extends CommonSubscriber
 {
     /**
-     * @var \MauticPlugin\MauticEnhancerBundle\Helper\EnhancerHelper
+     * @var \MauticPlugin\ContactEnrichmentBundle\Helper\ContactEnrichmentHelper
      */
     protected $enhancerHelper;
 
     /**
-     * @param \MauticPlugin\MauticEnhancerBundle\Helper\EnhancerHelper $helper
+     * @param \MauticPlugin\ContactEnrichmentBundle\Helper\ContactEnrichmentHelper $helper
      */
-    public function __construct(EnhancerHelper $helper)
+    public function __construct(ContactEnrichmentHelper $helper)
     {
         $this->enhancerHelper = $helper;
     }
@@ -57,7 +57,7 @@ class LeadSubscriber extends CommonSubscriber
         $lead = $event->getLead();
         if ($lead && (null !== $lead->getDateIdentified() || !$lead->isAnonymous())) {
             /**
-             * @var \MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration[]
+             * @var \MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration[]
              */
             $integrations = $this->enhancerHelper->getEnhancerIntegrations();
             foreach ($integrations as $integration) {
@@ -93,7 +93,7 @@ class LeadSubscriber extends CommonSubscriber
     public function doPostSaveEnhancements(LeadEvent $event)
     {
         /**
-         * @var \MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration[]
+         * @var \MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration[]
          */
         $integrations = $this->enhancerHelper->getEnhancerIntegrations();
         foreach ($integrations as $integration) {

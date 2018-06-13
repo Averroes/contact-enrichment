@@ -9,13 +9,13 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace MauticPlugin\MauticEnhancerBundle;
+namespace MauticPlugin\ContactEnrichmentBundle;
 
 use Mautic\PluginBundle\Bundle\PluginBundleBase;
 
 /**
- * Class MauticEnhancerBundle.
+ * Class ContactEnrichmentBundle.
  */
-class MauticEnhancerBundle extends PluginBundleBase
+class ContactEnrichmentBundle extends PluginBundleBase
 {
 }

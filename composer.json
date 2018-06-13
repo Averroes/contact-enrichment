@@ -1,11 +1,12 @@
 {
-  "name": "thedmsgroup/mautic-enhancer-bundle",
-  "description": "Various contact enhancer integrations for Mautic.",
+  "name": "cykonetic/mautic-contact-enrichment",
+  "description": "Contact Enrichment Integrations for Mautic.",
   "keywords": [
     "mautic",
     "marketing",
     "marketing automation",
-    "plugin"
+    "plugin",
+    "integartions"
   ],
   "type": "mautic-plugin",
   "require": {
@@ -16,10 +17,6 @@
     {
       "name": "Nicholai Bush",
       "email": "nicholaibush@yahoo.com"
-    },
-    {
-      "name": "Scott Shipman",
-      "email": "K.scott.shipman@gmail.com"
     }
   ]
 }

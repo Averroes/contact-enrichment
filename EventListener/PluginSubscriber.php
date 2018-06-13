@@ -9,12 +9,12 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace MauticPlugin\MauticEnhancerBundle\EventListener;
+namespace MauticPlugin\ContactEnrichmentBundle\EventListener;
 
 use Mautic\CoreBundle\EventListener\CommonSubscriber;
 use Mautic\PluginBundle\Event\PluginIntegrationEvent;
 use Mautic\PluginBundle\PluginEvents;
-use MauticPlugin\MauticEnhancerBundle\Helper\EnhancerHelper;
+use MauticPlugin\ContactEnrichmentBundle\Helper\ContactEnrichmentHelper;
 
 /**
  * Class PluginSubscriber.
@@ -38,9 +38,9 @@ class PluginSubscriber extends CommonSubscriber
      */
     public function buildEnhancerFields(PluginIntegrationEvent $event)
     {
-        /** @var \MauticPlugin\MauticEnhancerBundle\Integration\AbstractEnhancerIntegration $integration */
+        /** @var \MauticPlugin\ContactEnrichmentBundle\Integration\AbstractEnhancerIntegration $integration */
         $integration = $event->getIntegration();
-        if (in_array($integration->getName(), EnhancerHelper::IntegrationNames())) {
+        if (in_array($integration->getName(), ContactEnrichmentHelper::IntegrationNames())) {
             $integration->buildEnhancerFields();
         }
     }
